@@ -6,12 +6,14 @@ Bitnami Stacksmith (https://stacksmith.bitnami.com) for software stack creation 
 
 ##TL;DR Version
 
-git clone http://github...
-gcloud preview app deploy app.yaml
-<let GAE build container image, deploy updated module>
+    git clone https://github.com/nomisbeme/managedvm-hello-world.git
+    cd managedvm-hello-world
+    gcloud preview app deploy app.yaml
+Wait for GAE to build container image, deploy updated module
+```
 curl https://<project-id>.appspot.com
 pizza is awesome
-
+```
 ##Implementation Notes
 1. Uses Ruby/Sinatra as the demo application - same approach can be used for other Stacksmith languages and frameworks
 1. Dockerfile was slightly modified to create /var/log/app_engine/custom_logs as required for GAE to collect application logs (ref: https://cloud.google.com/appengine/docs/managed-vms/custom-runtimes/build)
