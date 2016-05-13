@@ -11,19 +11,19 @@
 ##   Connect to the container at DOCKER_IP:3000
 ##     replacing DOCKER_IP for the IP of your active docker host
 
-FROM gcr.io/stacksmith-images/debian-buildpack:wheezy-r06
+FROM gcr.io/stacksmith-images/debian-buildpack:wheezy-r07
 
 MAINTAINER Bitnami <containers@bitnami.com>
 
-LABEL com.bitnami.stacksmith.id="rzlus6d" \
+LABEL com.bitnami.stacksmith.id="ve3pkfq" \
       com.bitnami.stacksmith.name="prydonius/managedvm-hello-world-1"
 
-ENV STACKSMITH_STACK_ID="rzlus6d" \
+ENV STACKSMITH_STACK_ID="ve3pkfq" \
     STACKSMITH_STACK_NAME="prydonius/managedvm-hello-world-1" \
     STACKSMITH_STACK_PRIVATE="1"
 
 # Runtime
-RUN bitnami-pkg install ruby-2.3.1-0 --checksum b0398dceb2929572a7cbad61de9fe13ac92835eecbf7f2e5ef7cbc35dfa7c327
+RUN bitnami-pkg install ruby-2.3.1-1 --checksum a81395976c85e8b7c8da3c1db6385d0e909bd05d9a3c1527f8fa36b8eb093d84
 
 ## STACKSMITH-END: Modifications below this line will be unchanged when regenerating
 
