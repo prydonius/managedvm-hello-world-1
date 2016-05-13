@@ -30,6 +30,9 @@ RUN bitnami-pkg install ruby-2.3.1-0 --checksum b0398dceb2929572a7cbad61de9fe13a
 # Runtime template
 ENV PATH=/opt/bitnami/ruby/bin:$PATH
 
+RUN mkdir -p /var/log/app_engine/custom_logs
+RUN chown -R bitnami:bitnami /var/log/app_engine
+
 COPY . /app
 RUN chown -R bitnami:bitnami /app
 USER bitnami
@@ -37,5 +40,5 @@ WORKDIR /app
 
 RUN bundle install
 
-EXPOSE 3000
-CMD ["bundle", "exec", "rackup", "-o", "0.0.0.0", "-p", "3000"]
+EXPOSE 8080
+CMD ["bundle", "exec", "rackup", "-o", "0.0.0.0"]
